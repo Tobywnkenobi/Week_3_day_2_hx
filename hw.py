@@ -3,7 +3,7 @@ import re
 with open ('./user_records.txt') as f:
     data = f.readlines()
 
-pattern = re.compile('\d{2}), ([A-Z][A-Za=z ]+)')
+pattern = re.compile('\d{2}), (\b[A-Z][a-z]+ [A-Z][a-z]+\b)')
 
 true_count = 0
 false_count = 0
@@ -13,7 +13,7 @@ for d in data:
     if found_num:
         age = found_num.group(1)
         countries = found_num.group(2)
-        print(f'Age: {age} \nCountry: {countries}\n')
+        print(f'Age: {age} \nCountry: {countries}')
         true_count += 1
     else:
         false_count += 1
