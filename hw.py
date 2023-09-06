@@ -3,7 +3,7 @@ import re
 with open ('./user_records.txt') as f:
     data = f.readlines()
 
-pattern = re.compile('\d{2}), ([A-Z][\w+]+)')
+pattern = re.compile('\d{2}), ([A-Z][A-Za=z ]+)')
 
 true_count = 0
 false_count = 0
